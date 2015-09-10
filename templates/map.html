@@ -70,16 +70,8 @@
       }
 
       /*styling for mode of travel selection*/
-      #floating-panel {
-        z-index: 5;
-        background-color: #fff;
-        padding: 5px;
-        border: 1px solid #999;
-        text-align: center;
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
+      .side-panel {
         padding-left: 10px;
-        margin-bottom: 35px;
       }
 
     </style>
@@ -105,7 +97,7 @@
 
             <br><br><br>
 
-            <div id="floating-panel">
+            <div id="floating-panel" class="placeInput side-panel">
             <b>Mode of Travel: </b>
             <select id="mode">
               <option value="DRIVING">Driving</option>
@@ -115,7 +107,9 @@
             </select>
             </div>
 
-            <div id="right-panel">
+            <br><br><br>
+
+            <div id="right-panel" class="side-panel">
               <p>Total Distance: <span id="total"></span></p>
             </div>
 
