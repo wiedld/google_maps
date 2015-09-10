@@ -160,30 +160,27 @@ $("#updateRoadTrip").on("click", function(){
     displayRoute(myPosition, $("#destination").val(), directionsService,directionsDisplay);
 });
 
+////////////////////////////////////////////////////////
+// Change the preferred mode of transport
 
-function markLocation(){
-  console.log("running");
-  var marker = new google.maps.Marker({
-        position: myPosition,
-        map: map,
-        title: 'Roadtrip Stop',
-        draggable: true,
-        animation: google.maps.Animation.DROP
-      });
-}
+document.getElementById('mode').addEventListener('change', function() {
+    // update global var
 
-$("#markLocation").on("click", markLocation);
+    //trigger route update
+    displayRoute(myPosition, $("#destination").val(), directionsService,directionsDisplay);
+  });
 
 
 ////////////////////////////////////////////////////////
 // GOOGLE DEV CODE -- display route with waypoints.
 
 function displayRoute(origin, destination, service, display) {
+  var selectedMode = document.getElementById('mode').value;
   service.route({
     origin: origin,
     destination: destination,
     waypoints: roadTripStops,
-    travelMode: google.maps.TravelMode.DRIVING,
+    travelMode: google.maps.TravelMode[selectedMode],
     avoidTolls: true
   }, function(response, status) {
     if (status === google.maps.DirectionsStatus.OK) {

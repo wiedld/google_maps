@@ -69,6 +69,19 @@
         border-color: #4d90fe;
       }
 
+      /*styling for mode of travel selection*/
+      #floating-panel {
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+        margin-bottom: 35px;
+      }
+
     </style>
   </head>
   <body>
@@ -91,6 +104,16 @@
             <button type="button" class="btn btn-primary" id="updateRoadTrip">Add new stopping point.</button>
 
             <br><br><br>
+
+            <div id="floating-panel">
+            <b>Mode of Travel: </b>
+            <select id="mode">
+              <option value="DRIVING">Driving</option>
+              <option value="WALKING">Walking</option>
+              <option value="BICYCLING">Bicycling</option>
+              <option value="TRANSIT">Transit</option>
+            </select>
+            </div>
 
             <div id="right-panel">
               <p>Total Distance: <span id="total"></span></p>
